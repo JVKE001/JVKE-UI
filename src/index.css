@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+}
+
+@layer base {
+  h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  p {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply border rounded-xl cursor-pointer;
+  }
+}

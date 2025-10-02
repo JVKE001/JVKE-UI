@@ -29,8 +29,7 @@ const Button: React.FC<ButtonProps> = ({
   const variantClasses: Record<NonNullable<ButtonProps["variant"]>, string> = {
     solid:
       "bg-blue-600 hover:bg-blue-700 text-white shadow hover:shadow-lg shadow-blue-500/50",
-    outline:
-      "border border-blue-500 text-blue-500 hover:bg-blue-50",
+    outline: "border border-blue-500 text-blue-500 hover:bg-blue-50",
     ghost: "border border-gray-300 text-gray-700 hover:bg-gray-100",
   };
 
@@ -45,7 +44,7 @@ const Button: React.FC<ButtonProps> = ({
     <motion.button
       type={type}
       onClick={onClick}
-      className={`${appliedSize} ${appliedVariant} ${className} btn`}
+      className={`${appliedSize} ${appliedVariant} ${className} border rounded-xl cursor-pointer`}
       whileHover={{ scale: 1.1 }} // grows on hover
       whileTap={{ scale: 0.95 }} // shrinks on click
       initial={{ opacity: 0, y: -10 }} // initial animation

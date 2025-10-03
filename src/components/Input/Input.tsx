@@ -17,7 +17,7 @@ const Input: React.FC<InputProps> = ({
   value,
   onChange,
   disabled = false,
-  className = "border border-gray-600 rounded md:rounded-xl p-2 w-full md:w-md shadow focus:outline-none",
+  className ,
 }) => {
   return (
     <motion.input
@@ -26,7 +26,7 @@ const Input: React.FC<InputProps> = ({
       value={value}
       onChange={onChange}
       disabled={disabled}
-      className={className}
+      className={` ${className} = "border border-gray-600 rounded md:rounded-xl p-2 w-full md:w-md shadow focus:outline-none"`}
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       whileFocus={{

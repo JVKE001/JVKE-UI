@@ -16,7 +16,7 @@ const Button: React.FC<ButtonProps> = ({
   type = "submit",
   text = "Button",
   onClick,
-  className = "btn",
+  className,
   size,
   variant,
 }) => {

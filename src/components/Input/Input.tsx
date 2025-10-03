@@ -9,6 +9,7 @@ interface InputProps {
   placeholder?: string;
   disabled?: boolean;
   className?: string;
+  required?: boolean;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -17,7 +18,8 @@ const Input: React.FC<InputProps> = ({
   value,
   onChange,
   disabled = false,
-  className ,
+  className,
+  required = true,
 }) => {
   return (
     <motion.input
@@ -26,7 +28,8 @@ const Input: React.FC<InputProps> = ({
       value={value}
       onChange={onChange}
       disabled={disabled}
-      className={` ${className} = "border border-gray-600 rounded md:rounded-xl p-2 w-full md:w-md shadow focus:outline-none"`}
+      className={`border border-gray-600 rounded md:rounded-xl p-2 w-full text-xl shadow focus:outline-none ${className}`}
+      required={required}
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       whileFocus={{

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 interface ButtonProps {
   type?: "button" | "submit" | "reset"; // Optional 'cuz I've a default value
   text?: string; // Optional 'cuz I've a default value
-  onClick: () => void; // Required
+  onClick?: () => void; // Required
   className?: string; // Optional
   size?: "sm" | "md" | "lg"; // Optional
   variant?: "solid" | "ghost" | "outline"; // Optional
@@ -44,8 +44,8 @@ const Button: React.FC<ButtonProps> = ({
     <motion.button
       type={type}
       onClick={onClick}
-      className={`${appliedSize} ${appliedVariant} ${className} border rounded-xl cursor-pointer`}
-      whileHover={{ scale: 1.1 }} // grows on hover
+      className={`${appliedSize} ${appliedVariant} ${className} border rounded-xl cursor-pointer text-xl`}
+      whileHover={{ scale: 1.02 }} // grows on hover
       whileTap={{ scale: 0.95 }} // shrinks on click
       initial={{ opacity: 0, y: -10 }} // initial animation
       animate={{ opacity: 1, y: 0 }} // animate to this state

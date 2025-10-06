@@ -1,26 +1,33 @@
 import { useState } from "react";
-import Dropdown from "./components/Dropdown/Dropdown";
+import Toast from "./components/Toast/Toast";
+import { AnimatePresence } from "framer-motion";
 
-const App: React.FC = () => {
-  const [country, setCountry] = useState("");
-
-  const countries = [
-    { label: "USA", value: "US" },
-    { label: "UK", value: "UK" },
-    { label: "Japan", value: "JP" },
-  ];
+const App = () => {
+  const [showToast, setShowToast] = useState(false);
 
   return (
     <div className="p-2 flex flex-col justify-center items-center">
       <h1 className="mb-3 text-2xl font-bold">JVKE UI Library</h1>
-      <p className="text-gray-600 text-xl mb-10">Component Series · Day 5</p>
-      <Dropdown
-        options={countries}
-        value={country}
-        onChange={(val) => setCountry(String(val))}
-        placeholder="Select a country"
-      />
-      <p className="mt-3">Selected: {country}</p>
+      <p className="text-gray-600 text-xl mb-10">Component Series · Day 6</p>
+      <button
+        onClick={() => setShowToast(true)}
+        className="bg-blue-600 text-white px-4 py-2 rounded"
+      >
+        Show Toast
+      </button>
+      <AnimatePresence>
+        {showToast && (
+          <Toast
+            message="This will disappear in 3 seconds!"
+            type="success"
+            // action={{
+            //   label: "Undo",
+            //   onClick: () => console.log("Undo clicked!"),
+            // }}
+            onClose={() => setShowToast(false)}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 };

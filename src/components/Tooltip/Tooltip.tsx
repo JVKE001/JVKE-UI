@@ -6,7 +6,7 @@ interface TooltipProps {
   position?: "top" | "bottom" | "left" | "right";
   delay?: number;
   children: React.ReactNode;
-  className?: string; // ✅ Custom class
+  className?: string; 
 }
 
 const Tooltip: React.FC<TooltipProps> = ({

@@ -1,27 +1,29 @@
-import Accordion from "./components/Accordion/Accordion";
+import Tabs from "./components/Tabs/Tabs";
 
-const App = () => {
-  const faqItems = [
+const App: React.FC = () => {
+  const tabs = [
     {
-      title: "What is React?",
-      content: "React is a JavaScript library for building user interfaces.",
+      label: "Overview",
+      content: "This is the Overview section — you can add summary info here.",
     },
     {
-      title: "What is TypeScript?",
-      content: "TypeScript adds type safety and better tooling to JavaScript.",
+      label: "Features",
+      content: "Here you can describe your product or app features.",
     },
     {
-      title: "What is Framer Motion?",
-      content: "Framer Motion is a library for smooth animations in React.",
+      label: "Pricing",
+      content: "Simple and clear pricing information goes here.",
     },
   ];
 
   return (
     <div className="p-2 flex flex-col justify-center items-center">
       <h1 className="mb-3 text-2xl font-bold">JVKE UI Library</h1>
-      <p className="text-gray-600 text-xl mb-10">Component Series · Day 8 (Accordion)</p>
+      <p className="text-gray-600 text-xl mb-10">
+        Component Series · Day 9 (Tabs)
+      </p>
 
-      <Accordion items={faqItems} />
+      <Tabs tabs={tabs} />
     </div>
   );
 };
